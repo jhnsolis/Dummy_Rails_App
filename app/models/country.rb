@@ -7,7 +7,18 @@ class Country
     
     def self.all
         countries = get("/all")
+        format_row (countries)        
+    end
 
+    def self.get_country (country)
+        countries = get("/name/#{country}")
+        countries.each do |country|
+            country['languages'].map! { |language| language['name']}
+        end
+        countries
+    end
+
+    def self.format_row (countries)
         # Replace 'borders' country codes with actual country names
         #  and language object with just the language name
         countries.each do |country|
@@ -16,12 +27,7 @@ class Country
             end
             country['languages'].map! { |language| language['name']}
         end
-
-    countries        
-    end
-
-    def self.get_country (country)
-        get("/name/#{country}")
+        countries
     end
 
 end

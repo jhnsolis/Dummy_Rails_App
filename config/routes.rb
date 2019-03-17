@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'countries/index'
+  get 'countries/search_country'
 
   get 'greeter/hello'=> 'greeter#hello' #This means that when the browser gets a request greeter it will
                                         #route it to the greeter controller and hello action
