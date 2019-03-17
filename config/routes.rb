@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'countries/index'
+
   get 'greeter/hello'=> 'greeter#hello' #This means that when the browser gets a request greeter it will
                                         #route it to the greeter controller and hello action
                                         #Use rake routes to see all the spcified routes
