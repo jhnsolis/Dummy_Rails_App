@@ -1,3 +1,8 @@
 <h1>Greetings, <%=@name%></h1>
-<p>Time now: <%=@time%></p>
+<p>Time now: <%=formatted_time(@time) %></p> 
 <p>Times displayed: <%=@times_displayed%></p>
+
+<% #Another useful helper is the link_to helper
+#link_to Title Path %>
+<p><%=link_to "Google", "http://www.google.com"%></p> 
+<p><%=link_to "Goodbye", greeter_goodbye_path %></p> 
