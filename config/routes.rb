@@ -7,5 +7,7 @@ Rails.application.routes.draw do
                                         #Use rake routes to see all the spcified routes
   get 'greeter/goodbye'
 
+  root 'countries#search_country' #This will tell rails to go direclty to here when accessing the root path (http://localhost:3000/)
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
