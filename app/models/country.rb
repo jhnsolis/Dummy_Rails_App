@@ -13,6 +13,7 @@ class Country
     def self.get_country (country)
         countries = get("/name/#{country}")
         countries.each do |country|
+            return nil if (country[1] == 404)
             country['languages'].map! { |language| language['name']}
         end
         countries
